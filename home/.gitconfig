@@ -20,8 +20,8 @@
   pull = pull --rebase
 [help]
   autocorrect = -1
-[push]
-	default = simple
+#[push]
+#	default = simple
 [branch]
 	autosetuprebase = always
 [branch "*branch-name*"]
