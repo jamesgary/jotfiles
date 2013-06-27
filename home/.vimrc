@@ -7,7 +7,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'cakebaker/scss-syntax'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
@@ -23,7 +23,7 @@ Bundle 'wavded/vim-stylus'
 Bundle 'tpope/vim-fugitive'
 
 " vim-scripts repos
-Bundle 'desert256'
+Bundle 'desert256.vim'
 
 " basics
 filetype plugin indent on
