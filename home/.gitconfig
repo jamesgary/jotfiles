@@ -8,7 +8,7 @@
 [github]
   user = jamesgary
 [alias]
-  st = status -sb
+  st = status -s
   ci = commit
   br = branch
   co = checkout
