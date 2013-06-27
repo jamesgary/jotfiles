@@ -1,0 +1,7 @@
+--type-add=ruby=.haml,.rake,.erb,Gemfile,Guardfile,gemspec
+--type-add=js=.coffee
+--type-add=css=.scss,.sass
+
+--type-set=log=.log
+--ignore-dir=coverage
+--nolog

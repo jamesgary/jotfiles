@@ -1,0 +1,30 @@
+[user]
+	name = James Gary
+	email = mrjamesgary@gmail.com
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore_global
+[github]
+  user = jamesgary
+[alias]
+  st = status -sb
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff --color-words
+  re = remote -v
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  blame = blame -wC
+  undo = reset --soft HEAD^
+  pull = pull --rebase
+[help]
+  autocorrect = -1
+[push]
+	default = simple
+[branch]
+	autosetuprebase = always
+[branch "*branch-name*"]
+	rebase = true
+[receive]
+	denyNonFastForwards = true
