@@ -5,25 +5,25 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rodjek/vim-puppet'
 Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wavded/vim-stylus'
-Bundle 'tpope/vim-fugitive'
 
 " vim-scripts repos
-Bundle 'desert256.vim'
+Bundle 'vim-scripts/desert256.vim'
 
 " basics
 filetype plugin indent on
