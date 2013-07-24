@@ -17,8 +17,6 @@ alias servethis='python -m SimpleHTTPServer 8000'
 alias tree='tree -I node_modules' # -I tmp'
 alias sas='sudo apachectl start'
 alias sar='sudo apachectl restart'
-alias ack='ack-grep'
-alias ls='ls --color'
 
 # always open vim with multiple files in tabs
 alias vi='vim -p'
