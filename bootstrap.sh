@@ -7,7 +7,7 @@ if [ `whoami` = 'root' ]; then
 fi
 
 $aptget update
-$aptget install -y vim git-core
+$aptget install -y vim git-core ack-grep tree
 
 # homeshick
 rm -rf $HOME/.homesick
