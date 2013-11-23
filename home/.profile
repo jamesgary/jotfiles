@@ -14,7 +14,8 @@ alias bep='bundle exec padrino'
 # misc
 alias fu='touch tmp/restart.txt' # I'm usually angry at this point.
 alias servethis='python -m SimpleHTTPServer 8000'
-alias tree='tree -I node_modules' # -I tmp'
+alias tree='tree -I "*.pyc"'
+alias sapling='tree -I "*.pyc|__init__.py|tmp|node_modules|venv|docs|build|release|vendor"'
 alias sas='sudo apachectl start'
 alias sar='sudo apachectl restart'
 
@@ -47,6 +48,32 @@ proml()
 }
 
 proml
+
+###################
+# Auto-virtualenv #
+###################
+
+# The virtualenv will be activated automatically when you enter the directory.
+
+_virtualenv_auto_activate() {
+  for location in '.venv', 'venv'
+  do
+    if [ -e "$location/bin/activate" ]; then
+      # Check to see if already activated to avoid redundant activating
+      if [ "$VIRTUAL_ENV" != "$(pwd -P)/$location" ]; then
+        _VENV_NAME=$(basename `pwd`)
+        echo Activating virtualenv \"$_VENV_NAME\"...
+        VIRTUAL_ENV_DISABLE_PROMPT=1
+        source $location/bin/activate
+        _OLD_VIRTUAL_PS1="$PS1"
+        PS1="($location)$PS1"
+        export PS1
+      fi
+    fi
+  done
+}
+
+export PROMPT_COMMAND=_virtualenv_auto_activate
 
 #################################################
 # handy grep aliases, but trying to use ack now #

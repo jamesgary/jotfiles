@@ -5,8 +5,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
 Bundle 'airblade/vim-gitgutter'
-Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
@@ -14,6 +14,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rodjek/vim-puppet'
+Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -21,6 +22,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wavded/vim-stylus'
+Bundle 'nono/vim-handlebars'
+Bundle 'nvie/vim-flake8'
 
 " vim-scripts repos
 Bundle 'vim-scripts/desert256.vim'
@@ -45,7 +48,7 @@ set number
 set ruler
 syntax on
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl " glsl syntax
-autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead *.json,Gruntfile set filetype=javascript
 
 " RSpec
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
@@ -91,6 +94,10 @@ set listchars+=extends:>          " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
+
+" See https://github.com/gorakhargosh/watchdog/issues/56
+set nobackup
+set nowritebackup
 
 """"""""""""""""
 " From vimbits "
@@ -140,4 +147,5 @@ map <Leader>o iLorem ipsum dolor sit amet, consectetur adipiscing elit. In ut qu
 " Clear trailing whitespace
 map <Leader>w :%s/\s\+$//<CR>:noh<CR>
 
-map <Leader>t :Tabularize /: \zs<CR>
+vmap <leader>t :Tabularize /:\zs/l0l1<cr>
+vmap <leader>T :Tabularize /=<cr>

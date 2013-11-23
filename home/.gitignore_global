@@ -1,4 +1,5 @@
 *.orig
+*.pyc
 *.sphinx.conf
 *.sql
 *.sw[nop]
