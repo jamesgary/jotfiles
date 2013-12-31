@@ -1,6 +1,5 @@
 ﻿" Vundle
 set nocompatible " Disable vi-compatibility
-filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -23,13 +22,14 @@ Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wavded/vim-stylus'
 Bundle 'nono/vim-handlebars'
-Bundle 'nvie/vim-flake8'
+Bundle 'andviro/flake8-vim'
+Bundle 'Keithbsmiley/rspec.vim'
 
 " vim-scripts repos
 Bundle 'vim-scripts/desert256.vim'
 
 " basics
-filetype plugin indent on
+filetype indent plugin on
 set encoding=utf-8
 set history=1000
 set ignorecase
