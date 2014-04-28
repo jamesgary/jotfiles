@@ -24,6 +24,8 @@ Bundle 'wavded/vim-stylus'
 Bundle 'nono/vim-handlebars'
 Bundle 'andviro/flake8-vim'
 Bundle 'Keithbsmiley/rspec.vim'
+"Bundle 'jnwhiteh/vim-golang'
+Bundle 'Blackrush/vim-gocode'
 
 " vim-scripts repos
 Bundle 'vim-scripts/desert256.vim'
@@ -149,3 +151,4 @@ map <Leader>w :%s/\s\+$//<CR>:noh<CR>
 
 vmap <leader>t :Tabularize /:\zs/l0l1<cr>
 vmap <leader>T :Tabularize /=<cr>
+let g:ctrlp_by_filename = 1

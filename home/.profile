@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/local/go/bin
 
 #################
 # handy aliases #

@@ -17,12 +17,8 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   blame = blame -wC
   undo = reset --soft HEAD^
-  pull = pull --rebase
+	up = "!git remote update -p; git merge --ff-only @{u}"
 [help]
   autocorrect = -1
-[branch]
-	autosetuprebase = always
-[branch "*branch-name*"]
-	rebase = true
-[receive]
-	denyNonFastForwards = true
+[push]
+  default = simple
