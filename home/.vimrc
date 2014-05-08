@@ -49,8 +49,6 @@ set lazyredraw
 set number
 set ruler
 syntax on
-au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl " glsl syntax
-autocmd BufNewFile,BufRead *.json,Gruntfile set filetype=javascript
 
 " RSpec
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
@@ -100,6 +98,11 @@ set listchars+=precedes:<         " The character to show in the last column whe
 " See https://github.com/gorakhargosh/watchdog/issues/56
 set nobackup
 set nowritebackup
+
+" Language specific
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl set filetype=glsl " glsl syntax
+au BufNewFile,BufRead *.go set filetype=go | set tabstop=2 | set noexpandtab
+autocmd BufNewFile,BufRead *.json,Gruntfile set filetype=javascript
 
 """"""""""""""""
 " From vimbits "

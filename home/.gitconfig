@@ -20,5 +20,3 @@
 	up = "!git remote update -p; git merge --ff-only @{u}"
 [help]
   autocorrect = -1
-[push]
-  default = simple
