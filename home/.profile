@@ -1,9 +1,5 @@
 #!/bin/bash
 
-PATH=$PATH:/usr/local/bin
-PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/local/go/bin
-
 #################
 # handy aliases #
 #################
@@ -77,6 +73,15 @@ _virtualenv_auto_activate() {
 
 export PROMPT_COMMAND=_virtualenv_auto_activate
 
+##################
+# shared history #
+##################
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=500000
+export HISTFILESIZE=5000000
+source "$HOME"/.merge_history.bash
+
 #################################################
 # handy grep aliases, but trying to use ack now #
 #################################################
@@ -96,6 +101,8 @@ export VISUAL=vim
 export EDITOR=vim
 export PATH="/usr/local/heroku/bin:$PATH" # heroku toolbelt
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+source "$HOME/.git-completion.sh"
 
 # Lastly, load sensitive stuff
 
