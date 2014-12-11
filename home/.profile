@@ -80,7 +80,7 @@ export PROMPT_COMMAND=_virtualenv_auto_activate
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=500000
 export HISTFILESIZE=5000000
-source "$HOME"/.merge_history.bash
+#source "$HOME"/.merge_history.bash
 
 #################################################
 # handy grep aliases, but trying to use ack now #
@@ -95,8 +95,8 @@ alias ucgrep='grep -rI --color --context=5'
 #################
 
 # see http://stackoverflow.com/questions/6970545/make-error-installing-ruby-1-9-2-with-rvm-and-readline-under-osx-lion
-export ARCHFLAGS='-arch x86_64'
-export ARCH='-arch x86_64'
+#export ARCHFLAGS='-arch x86_64'
+#export ARCH='-arch x86_64'
 export VISUAL=vim
 export EDITOR=vim
 export PATH="/usr/local/heroku/bin:$PATH" # heroku toolbelt
