@@ -5,13 +5,14 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " run :BundleInstall (or vim +BundleInstall +qall for CLI lovers)
+Bundle 'gmarik/vundle'
+"Bundle 'othree/yajs.vim'
+Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'pangloss/vim-javascript'
 Bundle 'rodjek/vim-puppet'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-eunuch'
@@ -21,12 +22,14 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wavded/vim-stylus'
-"Bundle 'nono/vim-handlebars'
+Bundle 'nono/vim-handlebars'
 Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'andviro/flake8-vim'
+"Bundle 'andviro/flake8-vim'
 Bundle 'Keithbsmiley/rspec.vim'
 "Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
+"Bundle 'scrooloose/syntastic'
+Bundle 'chrisbra/Colorizer'
 
 " vim-scripts repos
 Bundle 'vim-scripts/desert256.vim'
@@ -40,6 +43,9 @@ set so=10 " Buffer 10 lines around the cursor when moving vertically
 set wrap
 set nosol " turn off startofline so ctrl+u and ctrl+d behave better
 set backspace=indent,eol,start
+set tabpagemax=100 " use `vim -p` to open up to 100 files
+
+" set clipboard=unnamed " (clipboard)
 
 " visual
 colorscheme desert
@@ -135,6 +141,18 @@ imap <Tab> <C-R>=SuperTab()<CR>
 " Map Q to repeat the last recorded macro
 map Q @q
 " Used to be: map Q @@
+
+" https://github.com/scrooloose/syntastic#3-recommended-settings
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" 
+" let g:syntastic_scss_checkers = ['scss_lint']
 
 """""""""""
 " From me "

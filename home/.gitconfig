@@ -19,7 +19,10 @@
   blame = blame -wC
   undo = reset --soft HEAD^
 	up = "!git remote update -p; git merge --ff-only @{u}"
+  pom = pull origin master
 [help]
   autocorrect = -1
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[push]
+	default = simple
