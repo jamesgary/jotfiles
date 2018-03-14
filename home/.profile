@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# TODO make a function out of:
-# grep -ilr "OLD" components/ | xargs -I@ sed -i '' 's/OLD/NEW/g' @
-# from http://stackoverflow.com/a/19861378
-#alias fc='grep -ilr "OLD" components/ | xargs -I@ sed -i "" "s/OLD/NEW/g" @'
-
-# fr old new dir
+# find/replace
+# Usage: fr oldString newString directory
 fr () {
   OLD=$1
   NEW=$2
@@ -36,7 +32,7 @@ alias bep='bundle exec padrino'
 # misc
 alias fu='touch tmp/restart.txt' # I'm usually angry at this point.
 alias servethis='python -m SimpleHTTPServer 8000'
-alias tree='tree -I "*.pyc|node_modules" --matchdirs'
+alias tree='tree -I "*.pyc|node_modules|elm-stuff" --matchdirs'
 alias sapling='tree -I "*.pyc|__init__.py|tmp|node_modules|venv|docs|build|release|vendor|Godeps"'
 alias sas='sudo apachectl start'
 alias sar='sudo apachectl restart'
@@ -81,25 +77,25 @@ proml
 
 # The virtualenv will be activated automatically when you enter the directory.
 
-_virtualenv_auto_activate() {
-  for location in '.venv', 'venv'
-  do
-    if [ -e "$location/bin/activate" ]; then
-      # Check to see if already activated to avoid redundant activating
-      if [ "$VIRTUAL_ENV" != "$(pwd -P)/$location" ]; then
-        _VENV_NAME=$(basename `pwd`)
-        echo Activating virtualenv \"$_VENV_NAME\"...
-        VIRTUAL_ENV_DISABLE_PROMPT=1
-        source $location/bin/activate
-        _OLD_VIRTUAL_PS1="$PS1"
-        PS1="($location)$PS1"
-        export PS1
-      fi
-    fi
-  done
-}
+#_virtualenv_auto_activate() {
+#  for location in '.venv', 'venv'
+#  do
+#    if [ -e "$location/bin/activate" ]; then
+#      # Check to see if already activated to avoid redundant activating
+#      if [ "$VIRTUAL_ENV" != "$(pwd -P)/$location" ]; then
+#        _VENV_NAME=$(basename `pwd`)
+#        echo Activating virtualenv \"$_VENV_NAME\"...
+#        VIRTUAL_ENV_DISABLE_PROMPT=1
+#        source $location/bin/activate
+#        _OLD_VIRTUAL_PS1="$PS1"
+#        PS1="($location)$PS1"
+#        export PS1
+#      fi
+#    fi
+#  done
+#}
 
-export PROMPT_COMMAND=_virtualenv_auto_activate
+#export PROMPT_COMMAND=_virtualenv_auto_activate
 
 ##################
 # shared history #
@@ -137,9 +133,20 @@ if [ -f "$HOME/.private/work" ]; then
   . "$HOME/.private/work"
 fi
 
+[[ -s "/Users/jamesgary/.gvm/scripts/gvm" ]] && source "/Users/jamesgary/.gvm/scripts/gvm"
+
 export GOPATH=~/go
 export PATH="/usr/local/heroku/bin:$PATH" # heroku toolbelt
 export PATH=$GOPATH/bin:$PATH:/usr/local/go/bin
 export PATH="/opt/chefdk/bin:$PATH"
+export PATH="/opt/chef/embedded/bin:$PATH"
+export GO15VENDOREXPERIMENT=0 # fuck this shit
 
-[[ -s "/Users/jamesgary/.gvm/scripts/gvm" ]] && source "/Users/jamesgary/.gvm/scripts/gvm"
+export DOCKER_API_VERSION=1.22
+#eval "$(docker-machine env default)"
+
+alias dc=docker-compose
+alias npm-exec='PATH=$(npm bin):$PATH'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -4,5 +4,6 @@
 --type-add=haml=.haml,.html
 
 --type-set=log=.log
---ignore-dir=tmp
+--ignore-dir=tmp,node_modules,elm-stuff,Godeps
+--ignore-file=match:/.*\.xlf$/
 --nolog
