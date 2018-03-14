@@ -1,6 +1,6 @@
 [user]
 	name = James Gary
-	email = james.gary@sendgrid.com
+  email = mrjamesgary@gmail.com
 	initials = jg
 [color]
 	ui = auto
@@ -25,4 +25,4 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [push]
-	default = simple
+	default = upstream # simple
